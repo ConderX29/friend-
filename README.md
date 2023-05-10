@@ -3,8 +3,8 @@
 Запуск сервиса
 Установите все зависимости, указанные в файле requirements.txt, с помощью команды:
 
- 
 ```pip install -r requirements.txt```
+
 Создайте и примените миграции базы данных с помощью следующих команд:
 
 ```python manage.py makemigrations
@@ -13,6 +13,7 @@ python manage.py migrate
 Запустите сервер разработки Django с помощью команды:
 
 ```python manage.py runserver```
+
 Сервер будет запущен по адресу http://localhost:8000/.
 
 API Endpoint's
@@ -23,18 +24,22 @@ URL: /api/users/
 
 Тело запроса:
 
-```{
+```
+{
   "username": "john_doe",
   "password": "password123"
 }
 ```
+
 Пример успешного ответа:
 
-```{
+```
+{
   "id": 1,
   "username": "john_doe"
 }
 ```
+
 Отправка заявки в друзья
 URL: /api/friend-requests/
 
@@ -42,14 +47,17 @@ URL: /api/friend-requests/
 
 Тело запроса:
 
-```{
+```
+{
   "from_user": 1,
   "to_user": 2
 }
 ```
+
 Пример успешного ответа:
 
-```{
+```
+{
   "id": 1,
   "from_user": {
     "id": 1,
@@ -70,10 +78,12 @@ URL: /api/friend-requests/{friend_request_id}/accept/
 
 Пример успешного ответа:
 
-```{
+```
+{
   "message": "Friend request accepted"
 }
 ```
+
 Отклонение заявки в друзья
 URL: /api/friend-requests/{friend_request_id}/reject/
 
@@ -81,10 +91,12 @@ URL: /api/friend-requests/{friend_request_id}/reject/
 
 Пример успешного ответа:
 
-```{
+```
+{
   "message": "Friend request rejected"
 }
 ```
+
 Просмотр списка входящих заявок в друзья
 URL: /api/friend-requests/incoming/
 
@@ -92,8 +104,8 @@ URL: /api/friend-requests/incoming/
 
 Пример успешного ответа:
 
-
-```[
+```
+[
   {
     "id": 1,
     "from_user": {
@@ -108,13 +120,16 @@ URL: /api/friend-requests/incoming/
   }
 ]
 ```
+
 Просмотр списка исходящих заявок в друзья
 URL: /api/friend-requests/outgoing/
 
 Метод: GET
 
 Пример успешного ответа:
-```[
+
+```
+[
   {
     "id": 2,
     "from_user": {
@@ -129,6 +144,7 @@ URL: /api/friend-requests/outgoing/
   }
 ]
 ```
+
 Просмотр списка друзей
 URL: /api/friends/
 
@@ -136,7 +152,8 @@ URL: /api/friends/
 
 Пример успешного ответа:
 
-```[
+```
+[
   {
     "id": 1,
     "users": [
@@ -167,6 +184,7 @@ URL: /api/friends/
   }
 ]
 ```
+
 Просмотр статуса дружбы
 URL: /api/friends/status/{user_id}/
 
@@ -179,6 +197,7 @@ URL: /api/friends/status/{user_id}/
   "status": "friends"
 }
 ```
+
 Удаление друга
 URL: /api/friends/{friend_id}/remove/
 
@@ -191,5 +210,6 @@ URL: /api/friends/{friend_id}/remove/
   "message": "Friend removed"
 }
 ```
+
 Завершение работы с сервисом
 Для остановки сервера разработки Django, нажмите Ctrl + C или Ctrl + Break в командной строке.
